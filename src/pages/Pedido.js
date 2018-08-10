@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     header:{
         flex: 1,
         backgroundColor: colors.primary,
-        paddingTop: metrics.basePadding,
+        padding: metrics.basePadding,
+        paddingBottom: metrics.basePadding/2,
         justifyContent: 'center',
         alignItems: 'center',
     },
