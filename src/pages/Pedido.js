@@ -1,69 +1,76 @@
 import React from 'react';
-
-import { View, Text, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    TouchableOpacity,
+    StatusBar,
+ } from 'react-native'
 
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 
-import {metrics, colors} from '../styles';
+import { colors, metrics } from '../styles';
 
-
-export default Pedido = props =>(
+export default Pedido = props => (
     <View style={styles.container}>
         <StatusBar
-            barStyle='light-content'
             backgroundColor={colors.darkPrimary}
+            barStyle="light-content"
         />
         <View style={styles.header}>
             <Header />
         </View>
-        <View  style={styles.menu}>
+        <View style={styles.menu}>
             <Menu />
         </View>
-        <View style={styles.totalBox}>
-            <Text style={styles.textTotal}>R$ 0,00</Text>
+        <View style={styles.total}>
+            <Text style={styles.valueTotal}>R$ 0,00</Text>
         </View>
         <TouchableOpacity style={styles.button}>
-            <Text style={styles.textButton} >Confirmar</Text>
+            <Text style={styles.textButton}>Confirmar Pedido</Text>
         </TouchableOpacity>
     </View>
-)
+);
 
 const styles = StyleSheet.create({
     container:{
         flex: 1,
     },
-    header: {
+    header:{
         flex: 1,
-        paddingTop: metrics.basePadding,
         backgroundColor: colors.primary,
+        paddingTop: metrics.basePadding,
         justifyContent: 'center',
         alignItems: 'center',
     },
     menu:{
         flex: 8,
-        padding: metrics.basePadding,
+        margin: metrics.baseMargin,
     },
-    totalBox:{
+    total:{
         height: 40,
         justifyContent: 'center',
-        alignItems: 'flex-end'
-    },
-    textTotal:{
-        fontSize: 25,
+        alignItems: 'flex-end',
     },
     button:{
         flex: 1,
         backgroundColor: colors.success,
-        justifyContent: 'center',
-        alignItems: 'center',
         margin: metrics.baseMargin,
         borderRadius: metrics.baseRadius,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     textButton:{
         fontSize: 20,
         fontWeight: 'bold',
         color: colors.darkTransparent
+    },
+    valueTotal:{
+        fontSize: 25
     }
 
-});
+
+})
+
+

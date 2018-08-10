@@ -1,13 +1,11 @@
 import React from 'react';
-
-import { View, Text } from 'react-native';
+import { View, Text } from 'react-native'
 
 import Produto from './Produto';
 
-export default Menu = props =>(
+export default Menu = props => (
     <View>
-        <Produto />
-        <Produto />
-        <Produto />
+        <Produto nome='X-Salada' preco='10,00' />
+        <Produto nome='X-Bacon' preco='20,00'/>
     </View>
 )
