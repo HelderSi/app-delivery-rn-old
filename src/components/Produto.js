@@ -36,17 +36,17 @@ export default class Produto extends Component {
         return (
             <View style={styles.box}>
                 <View style={styles.info}>
-                    <Text>{ this.props.nome }</Text>
-                    <Text>R$ { this.props.preco }</Text>
+                    <Text style={styles.name}>{ this.props.nome }</Text>
+                    <Text style={styles.price}>R$ { this.props.preco }</Text>
                 </View>
                 <View style={styles.quantity}>
                     <Text style={styles.quantityValue}>{this.state.amount}</Text>
                     <View>
                         <TouchableOpacity style={styles.button} onPress={ () => this._increment() }>
-                            <Text>+</Text>
+                            <Text style={styles.textButton}>+</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.button} onPress={ () => this._decrement() }>
-                            <Text>-</Text>
+                            <Text style={styles.textButton}>-</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -58,25 +58,48 @@ export default class Produto extends Component {
 const styles = StyleSheet.create({
     box:{
         flexDirection: 'row',
-        margin: metrics.baseMargin/2,
-        padding: metrics.basePadding,
-        backgroundColor: colors.white,
-        elevation: 4,
         justifyContent: 'space-between',
+        alignItems: 'center',
+        margin: metrics.baseMargin/2,
+        paddingLeft: metrics.basePadding,
+        backgroundColor: colors.white,
+        shadowOffset: {
+            width: 0,
+            height: 1
+        },
+        shadowRadius: metrics.baseRadius,
+        shadowOpacity: 0.2,
+        elevation: 4,
         borderRadius: metrics.baseRadius,
     },
     info:{
+        justifyContent: 'space-between'
 
-
+    },
+    name:{
+        fontSize: 25,
+        fontWeight: 'bold',
+    },
+    price:{
+        fontSize: 15,
+        marginTop: metrics.baseMargin
     },
     quantity:{
         flexDirection: 'row',
     },
     button:{
-
+        paddingVertical: metrics.basePadding/2,
+        paddingHorizontal: metrics.basePadding,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    textButton:{
+        fontSize: 25,
+        color: colors.darkTransparent,
+        fontWeight: 'bold',
     },
     quantityValue:{
-        fontSize: 30,
+        fontSize: 40,
         alignSelf: 'center',
         marginHorizontal: metrics.baseMargin
     }
