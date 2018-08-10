@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
         height: 40,
         justifyContent: 'center',
         alignItems: 'flex-end',
+        paddingHorizontal: metrics.basePadding,
     },
     button:{
         flex: 1,
